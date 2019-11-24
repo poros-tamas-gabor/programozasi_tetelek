@@ -158,16 +158,47 @@ namespace programozasi_tetelek
                 int k = 0;
                 for (int i = 0; i<tomb01.Length; i++)
                 {
-                    result[k] = tomb01[i];
-                    k++;
+                    bool duplicate_check = false;
                     int j = 0;
+                    while (j < result.Length && duplicate_check == false)
+                    {
+                        if (result[j] == tomb01[i])
+                        {
+                            duplicate_check = true;
+                        }
+                        j++;
+                    }
+                    if (duplicate_check == false)
+                    {
+                        result[k] = tomb01[i];
+                        k++;
+                    }
+                }
+                for (int j = 0; j < tomb02.Length; j++)
+                {
+                    bool duplicate_check = false;
+                    int i= 0;
+                    while (i < tomb01.Length && duplicate_check == false)
+                    {
+                        if (tomb02[j] == tomb01[i])
+                        {
+                            duplicate_check = true;
+                        }
+                        i++;
+                    }
+                    if (duplicate_check == false)
+                    {
+                        result[k] = tomb02[j];
+                        k++;
+                    }
+
                 }
             
                 return result;
             }
             int[] A = { 1, 2, 3, 4, 5, 6, 7, 8 ,-23,6,2,-76};
             int[] C = { 2, 2, 4, 5, 15, 85 ,6};
-            var B = metszet(A, C);
+            var B = unio(A, C);
             foreach (var item in B)
             {
 
