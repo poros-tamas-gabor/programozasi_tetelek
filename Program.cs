@@ -152,6 +152,19 @@ namespace programozasi_tetelek
                 return result;
             }
 
+            int[] unio(int[] tomb01, int[] tomb02)
+            {
+                int[] result = new int[tomb01.Length + tomb02.Length];
+                int k = 0;
+                for (int i = 0; i<tomb01.Length; i++)
+                {
+                    result[k] = tomb01[i];
+                    k++;
+                    int j = 0;
+                }
+            
+                return result;
+            }
             int[] A = { 1, 2, 3, 4, 5, 6, 7, 8 ,-23,6,2,-76};
             int[] C = { 2, 2, 4, 5, 15, 85 ,6};
             var B = metszet(A, C);
